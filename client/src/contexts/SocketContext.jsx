@@ -11,7 +11,7 @@ export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001", { // Replace with your server URL
+    const newSocket = io("http://localhost:3001", { 
       autoConnect: false,
     });
     setSocket(newSocket);

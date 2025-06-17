@@ -14,6 +14,15 @@ const socketIo = require("socket.io");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/brainbuster', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+module.exports = mongoose.connection;
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
