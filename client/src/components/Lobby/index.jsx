@@ -4,6 +4,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { GET_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import socket from '../../socket';
+import './Lobby.css'
 const Lobby = () => {
   const navigate = useNavigate();
   const { gameId } = useParams();
@@ -95,16 +96,18 @@ const Lobby = () => {
   }
   
   return (
-    <div className='Lobby'>
+    <div className='lobby-container'>
+      <div className='lobby-content'>
       <h2>BrainBuster Lobby</h2>
       <div className='game-info'>
-        <p>
+        <p className='game-id'>
           Game ID: <strong>{gameId}</strong>
         </p>
+        </div>
         {waiting ? (
-          <p>Waiting for the game to start...</p>
+          <p className='waiting-message'>Waiting for the game to start...</p>
         ) : (
-          <p>Your opponent has joined. The game is starting...</p>
+          <p className='waiting-message'>Your opponent has joined. The game is starting...</p>
         )}
         {gameFull && <p className='error'>{error}</p>}
       </div>
@@ -113,8 +116,8 @@ const Lobby = () => {
         <button onClick={handleAcceptInvite}>Accept</button>
         <button onClick={handleDeclineInvite}>Decline</button> */}
       </div>
-      <div>
-        <h3>Your Friends</h3>
+      <div className='friends-section'>
+        <h3>Invite your Friends</h3>
         <div  style={{
           display: 'flex',
           flexDirection: 'column',
@@ -125,7 +128,8 @@ const Lobby = () => {
             me.friends.map((friend) =>(
               <>
               {/* <li>{friend.firstName} {friend.lastName}</li> */}
-              <button onClick={() => handleInvite(friend._id)} key={friend._id} style={{
+            
+              <button className='friend-item' onClick={() => handleInvite(friend._id)} key={friend._id} style={{
                 margin: '10px'
               }}>Invite {friend.firstName} {friend.lastName} to this game!</button>
               </>

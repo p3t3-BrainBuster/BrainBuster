@@ -5,6 +5,7 @@ import { GET_ME, QUERY_USERS } from '../utils/queries';
 import socket from '../socket';
 import { Link } from 'react-router-dom';
 import { useTheme } from './ThemeContext.jsx';
+import './Dashboard.css'
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -114,7 +115,7 @@ function Dashboard() {
   if (queryError || errorUsers) return <p>Error loading data.</p>;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div className='dash' style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {/* Main content */}
       <div
         className="dashboard-container"
@@ -178,7 +179,7 @@ function Dashboard() {
               <span>🧑</span>
               <span>Customize Avatar</span>
             </Link>
-            <Link
+            {/* <Link
               to="/themes"
               style={{
                 color: '#7E57C2',
@@ -193,7 +194,7 @@ function Dashboard() {
             >
               <span>🎨</span>
               <span>Themes</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
 

@@ -118,7 +118,7 @@ function Nav() {
                   },
                 }}
               >
-                Home
+                Create a Game
               </Link>
               <Link
                 to="/profile"

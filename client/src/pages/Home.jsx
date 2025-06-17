@@ -85,7 +85,7 @@ const Home = () => {
               >
                 Create Game
               </button>
-              <button
+              {/* <button
                 onClick={handleJoinGame}
                 style={{
                   backgroundColor: "#FF4081",
@@ -98,7 +98,7 @@ const Home = () => {
                 }}
               >
                 Join Game
-              </button>
+              </button> */}
             </div>
           ) : (
             <div>

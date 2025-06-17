@@ -219,13 +219,30 @@ const Quiz = () => {
 
     return (
       <div className={styles.gameOverContainer} style={{
-        marginTop: '100px'
+        backgroundColor: 'white',
+        width: '50%',
+        textAlign: 'center',
+        margin: '0 auto',
+        marginTop: '200px',
+        padding: '20px',
+        borderRadius: '10px',
+        boxShadow: ' 0 20px 40px rgba(0, 0, 0, 0.04)'
       }}>
         <h2>Game Over</h2>
-        <p>Your Score: {myScore}</p>
-        <p>Opponent's Score: {opponentScore}</p>
+        <p style={{
+          fontWeight: 'bold'
+        }}>Your Score: {myScore}</p>
+        <p style={{
+          fontWeight: 'bold'
+        }}>Opponent's Score: {opponentScore}</p>
         <h3>{resultText}</h3>
-        <button onClick={() => navigate('/')}>Return to Home</button>
+        <button onClick={() => navigate('/')} style={{
+          backgroundColor: '#FF4081',
+          border: 'none',
+          padding: '15px',
+          color: 'white',
+          borderRadius: '50px'
+        }}>Return to Create Game</button>
       </div>
     );
   }
